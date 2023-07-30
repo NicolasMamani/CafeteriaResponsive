@@ -1,0 +1,239 @@
+/* Importo la fuente Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Creo Variables */
+:root {
+  --primary-color: #c7a17a;
+  --background-color: #f9f5f0;
+  --dark-color: #151515;
+}
+
+html {
+  /* Como sabemos que el font size por defecto es 16px, el 62.5 es 10px */
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+/* Hacemos el reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utilidades */
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.container-hero {
+  background-color: var(--background-color);
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.customer-support {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.customer-support i {
+  font-size: 3.3rem;
+}
+
+.content-customer-support {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container-logo i {
+  font-size: 3rem;
+}
+
+.container-logo a {
+  text-decoration: none;
+  color: #000;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.container-user {
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+/* Ahora vamos a modificar los iconos que nos da font awesone */
+.container-user .fa-user {
+  font-size: 3rem;
+  color: var(--primary-color);
+  padding-right: 2.5rem;
+  /* en la linea de abajo hacemos un borde para que separe a ambos iconos */
+  border-right: 1px solid #e2e2e2;
+}
+.container-user .fa-basket-shopping {
+  font-size: 3rem;
+  color: var(--primary-color);
+  padding-left: 1rem;
+}
+
+.container-shopping-cart {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ahora tocamos el navbar */
+
+.container-navbar {
+  background-color: var(--primary-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.navbar .fa-bars {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: var(--dark-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  /* Usamos el relative para crear una raya */
+  position: relative;
+}
+
+/* Ahora vamos a crear un pseudoelemento */
+.menu a::after {
+  content: "";
+  width: 1.5rem;
+  height: 0.1rem;
+  background-color: #fff;
+  position: absolute;
+  bottom: -0.3rem;
+  /* Esto es un truquito para centrar poruqe con solo left 50% no se centra realmente */
+  left: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 0;
+  transition: all 0.3 ease;
+}
+
+.menu a:hover::after {
+  /* Acá hago qe sea visible lo del texto subrayado */
+  opacity: 1;
+}
+.menu a:hover {
+  color: #fff;
+}
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  background-color: #fff;
+  height: 4.4rem;
+  overflow: hidden;
+}
+
+.search-form input {
+  /*Buscar info de las 2 de abajo  */
+  outline: none;
+  font-family: inherit;
+  /*Buscar info de las 2 de arriba */
+  border: none;
+  font-size: 1.4rem;
+  padding: 0 2rem;
+  color: #777;
+  cursor: pointer;
+}
+
+/* Ahora vamos a quitar la x del input  */
+.search-form input::-webkit-search-cancel-button {
+  appearance: none;
+}
+.search-form .btn-search {
+  border: none;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.btn-search i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* ************** */
+/* Banner */
+/* ************** */
+
+.banner {
+  /* Lo del linear gradient es para hacer en efecto de oscurecer */
+  background-image: linear-gradient(100deg, #000000, #00000020),
+    url("img/banner.jpg");
+  height: 60rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.content-banner {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 25rem 0;
+}
+
+.content-banner p {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.content-banner h2 {
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.content-banner a {
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary-color);
+  /* Le ponemos el valor inline-block para que se comporte como una caja en bloque */
+  display: inline-block;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  border-radius: 3rem;
+}
